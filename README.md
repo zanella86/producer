@@ -28,21 +28,43 @@
 - Slack
 - Github
 - Trello
+- RabbitMQ
 
 ---
 
 ## PARA TESTAR
 
-Acesse a url abaixo:
+### Configure o ambiente
 
+#### Versão do java
+![Versão Java](docs/images/config_java.PNG)
+
+
+#### Execução com o spring boot/gradle 
+![Gradle/Execução](docs/images/config_gradle.PNG)
+
+
+#### RabbitMQ 
+![Criando uma instancia - Parte 1](docs/images/config_rabbitmq01.PNG)
+![Criando uma instancia - Parte 2](docs/images/config_rabbitmq02.PNG)
+![Criando uma instancia - Parte 3](docs/images/config_rabbitmq03.PNG)
+![Criando uma instancia - Parte 4](docs/images/config_rabbitmq04.PNG)
+
+
+#### Execute esta aplicação e escolha um dos métodos abaixo para executar o comando de teste:
+  - Executar diretamente do prompt de comando;
+  - Intellij: É necessário que o terminal da IDE esteja configurado para executar com o **cmd.exe**:
+![Terminal](docs/images/config_terminal.PNG)
+
+
+#### Execute o teste!
+Clique no símbolo verde ao lado esquerdo do comando
 ```shell
-curl -X POST http://localhost:8080/drone/report/status -H "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json"
+curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json"
 ```
 
-```shell
-curl --header "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json" http://localhost:8080/drone/report/status
-```
 
+Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/ReportStatus.json) )
 ```json
 {
   "idDrone": "DRONE_1232342123",
@@ -56,6 +78,6 @@ curl --header "Content-Type: application/json" -d "@src/test/resources/ReportSta
 
 --- 
 
-#### FONTES
+#### REFERÊNCIAS
 
 - [CloudAMQP - RabbitMQ](https://customer.cloudamqp.com/instance/)
