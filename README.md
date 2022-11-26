@@ -29,6 +29,7 @@
 - Github
 - Trello
 - RabbitMQ
+- Draw.io
 
 ---
 
@@ -37,11 +38,11 @@
 ### Configure o ambiente
 
 #### Versão do java
-![Versão Java](docs/images/config_java.PNG)
+![JDK](docs/images/config_java.PNG)
+![Gradle](docs/images/config_gradle01.PNG)
 
-
-#### Execução com o spring boot/gradle 
-![Gradle/Execução](docs/images/config_gradle.PNG)
+#### Execução com o spring boot/gradle
+![Gradle/builder](docs/images/config_gradle02.PNG)
 
 
 #### RabbitMQ 
@@ -58,7 +59,7 @@
 
 
 #### Execute o teste!
-Clique no símbolo verde ao lado esquerdo do comando
+Caso tenha optado pela IDE Intellij, clique no símbolo verde ao lado esquerdo do comando abaixo:
 ```shell
 curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json"
 ```
@@ -67,7 +68,7 @@ curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: a
 Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/ReportStatus.json) )
 ```json
 {
-  "idDrone": "DRONE_1232342123",
+  "idDrone": "DRONE_123",
   "latitude": "123456789",
   "longitude": "-987654321",
   "temperatura": 40,
@@ -81,3 +82,4 @@ Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/R
 #### REFERÊNCIAS
 
 - [CloudAMQP - RabbitMQ](https://customer.cloudamqp.com/instance/)
+- [Draw.io](https://app.diagrams.net)
