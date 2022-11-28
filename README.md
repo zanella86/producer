@@ -20,6 +20,7 @@
 ### REPOSITÓRIOS RELACIONADOS
 
 - https://github.com/lakagawa/drone
+- https://github.com/jhowlacerda/consumer
 
 ---
 
@@ -61,21 +62,32 @@
 #### Execute o teste!
 Caso tenha optado pela IDE Intellij, clique no símbolo verde ao lado esquerdo do comando abaixo:
 ```shell
-curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json"
+curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatusNormal.json"
+```
+```shell
+curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatusAlert.json"
 ```
 
-
-Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/ReportStatus.json) )
+Exemplo de conteúdo do teste:
 ```json
 {
-  "idDrone": "DRONE_123",
-  "latitude": "123456789",
-  "longitude": "-987654321",
-  "temperatura": 40,
-  "umidade": 90,
-  "rastreamento": true
+  "idDrone": "DRONE_NNN",
+  "latitude": "-15",
+  "longitude": "-47",
+  "temperatura": 30,
+  "umidade": 40
 }
 ```
+
+### Resultado esperado
+
+#### Exchange
+
+![Exchange-drone.report](docs/images/config_rabbitmq05.PNG)
+
+#### Queue
+
+![QueueStatus-Normal-Alert](docs/images/config_rabbitmq06.PNG)
 
 --- 
 
@@ -83,3 +95,4 @@ Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/R
 
 - [CloudAMQP - RabbitMQ](https://customer.cloudamqp.com/instance/)
 - [Draw.io](https://app.diagrams.net)
+- [RabbitMQ: Exchange Types - Topic vs Direct](https://www.nastel.com/rabbitmq-topic-vs-direct-exchange)
