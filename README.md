@@ -69,11 +69,10 @@ Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/R
 ```json
 {
   "idDrone": "DRONE_123",
-  "latitude": "123456789",
-  "longitude": "-987654321",
+  "latitude": -27.12575814967628,
+  "longitude": -987654321,
   "temperatura": 40,
-  "umidade": 90,
-  "rastreamento": true
+  "umidade": 90
 }
 ```
 
