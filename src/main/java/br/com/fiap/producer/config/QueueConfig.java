@@ -8,12 +8,20 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class QueueConfig {
 
-    @Value("${queue.drone}")
-    private String name;
+    @Value("${queue.normal}")
+    private String queueNormal;
 
-    @Bean
-    public Queue queue() {
-        return new Queue(this.name, true);
+    @Value("${queue.alert}")
+    private String queueAlert;
+
+    @Bean(name = "beanQueueNormal")
+    public Queue queueNormal() {
+        return new Queue(this.queueNormal, true);
+    }
+
+    @Bean(name = "beanQueueAlert")
+    public Queue queueAlert() {
+        return new Queue(this.queueAlert, true);
     }
 
 }

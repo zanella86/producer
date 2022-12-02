@@ -20,6 +20,7 @@
 ### REPOSITÓRIOS RELACIONADOS
 
 - https://github.com/lakagawa/drone
+- https://github.com/jhowlacerda/consumer
 
 ---
 
@@ -61,21 +62,36 @@
 #### Execute o teste!
 Caso tenha optado pela IDE Intellij, clique no símbolo verde ao lado esquerdo do comando abaixo:
 ```shell
-curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatus.json"
+curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatusNormal.json"
+```
+```shell
+curl -X POST http://localhost:8080/drone/report/status --header "Content-Type: application/json" -d "@src/test/resources/ReportStatusAlert.json"
 ```
 
-
-Conteúdo do teste (presente no arquivo [ReportStatus.json](src/test/resources/ReportStatus.json) )
+Exemplo de conteúdo do teste:
 ```json
 {
-  "idDrone": "DRONE_123",
-  "latitude": "123456789",
-  "longitude": "-987654321",
-  "temperatura": 40,
-  "umidade": 90,
-  "rastreamento": true
+  "idDrone": "DRONE_NNN",
+  "latitude": -14.739023157961602,
+  "longitude": -75.13000484778613,
+  "temperatura": 30,
+  "umidade": 15
 }
 ```
+
+### Resultado esperado
+
+#### Exchanges
+
+![Broker-Queues](docs/images/amqp_default01.PNG)
+![Broker-Queues](docs/images/amqp_default02.PNG)
+
+#### Queues
+
+![Broker-Queues](docs/images/queues_rabbitmq.PNG)
+![Queue-Alert-01](docs/images/queue_alert_msg01.PNG)
+![Queue-Alert-02](docs/images/queue_alert_msg02.PNG)
+![Queue-Normal-01](docs/images/queue_normal_msg01.PNG)
 
 --- 
 
