@@ -72,10 +72,10 @@ Exemplo de conteúdo do teste:
 ```json
 {
   "idDrone": "DRONE_NNN",
-  "latitude": "-15",
-  "longitude": "-47",
+  "latitude": -14.739023157961602,
+  "longitude": -75.13000484778613,
   "temperatura": 30,
-  "umidade": 40
+  "umidade": 15
 }
 ```
 

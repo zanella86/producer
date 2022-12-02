@@ -25,9 +25,9 @@ public class QueueSender {
 
     public void send(ReportStatus status) {
         if(status.getUmidade() <= 15 || (status.getTemperatura() <= 0 || status.getTemperatura() >= 35) ) {
-            rabbitTemplate.convertAndSend(this.queueAlert.getName(), status);   // FIXME Incluir exchange/binding
+            rabbitTemplate.convertAndSend(this.queueAlert.getName(), status);
         }else {
-            rabbitTemplate.convertAndSend(this.queueNormal.getName(), status);  // FIXME Incluir exchange/binding
+            rabbitTemplate.convertAndSend(this.queueNormal.getName(), status);
         }
         log.info("STATUS: " + status.toString());
     }

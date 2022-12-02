@@ -10,8 +10,8 @@ import java.io.Serializable;
 public class ReportStatus implements Serializable {
 
     private String idDrone;
-    private String latitude;
-    private String longitude;
+    private double latitude;
+    private double longitude;
     private int temperatura;
     private int umidade;
 
