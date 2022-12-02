@@ -81,13 +81,17 @@ Exemplo de conteúdo do teste:
 
 ### Resultado esperado
 
-#### Exchange
+#### Exchanges
 
-![Exchange-drone.report](docs/images/config_rabbitmq05.PNG)
+![Broker-Queues](docs/images/amqp_default01.PNG)
+![Broker-Queues](docs/images/amqp_default02.PNG)
 
-#### Queue
+#### Queues
 
-![QueueStatus-Normal-Alert](docs/images/config_rabbitmq06.PNG)
+![Broker-Queues](docs/images/queues_rabbitmq.PNG)
+![Queue-Alert-01](docs/images/queue_alert_msg01.PNG)
+![Queue-Alert-02](docs/images/queue_alert_msg02.PNG)
+![Queue-Normal-01](docs/images/queue_normal_msg01.PNG)
 
 --- 
 
@@ -95,4 +99,3 @@ Exemplo de conteúdo do teste:
 
 - [CloudAMQP - RabbitMQ](https://customer.cloudamqp.com/instance/)
 - [Draw.io](https://app.diagrams.net)
-- [RabbitMQ: Exchange Types - Topic vs Direct](https://www.nastel.com/rabbitmq-topic-vs-direct-exchange)
