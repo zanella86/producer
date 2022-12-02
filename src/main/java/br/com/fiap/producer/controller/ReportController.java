@@ -1,7 +1,7 @@
 package br.com.fiap.producer.controller;
 
 import br.com.fiap.producer.domain.ReportStatus;
-import br.com.fiap.producer.senders.QueueSender;
+import br.com.fiap.producer.senders.ExchangeSender;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,11 +10,11 @@ import org.springframework.web.bind.annotation.*;
 public class ReportController {
 
     @Autowired
-    private QueueSender queueSender;
+    private ExchangeSender exchangeSender;
 
     @PostMapping("/report/status")
     public void send(@RequestBody ReportStatus status) {
-        queueSender.send(status);
+        exchangeSender.send(status);
     }
 
 }
