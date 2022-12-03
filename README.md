@@ -52,6 +52,10 @@
 ![Criando uma instancia - Parte 3](docs/images/config_rabbitmq03.PNG)
 ![Criando uma instancia - Parte 4](docs/images/config_rabbitmq04.PNG)
 
+##### Configure o endereço do broker
+
+No arquivo [application.properties](src/main/resources/application.properties) preencha o valor do atributo 
+`spring.rabbitmq.addresses`
 
 #### Execute esta aplicação e escolha um dos métodos abaixo para executar o comando de teste:
   - Executar diretamente do prompt de comando;
