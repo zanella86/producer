@@ -11,7 +11,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString(includeFieldNames = true)
-public class ReportStatus implements Serializable {
+public class ReportStatus {
 
     private String idDrone;
     private double latitude;
